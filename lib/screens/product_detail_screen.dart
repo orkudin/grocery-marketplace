@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:grocery_marketplace/models/card_product.dart';
 import 'package:grocery_marketplace/providers/favorites_provider.dart';
+import 'package:grocery_marketplace/screens/comments_screen.dart';
 import 'package:grocery_marketplace/widgets/image_slider.dart';
 import 'package:transparent_image/transparent_image.dart';
 
@@ -18,7 +19,7 @@ class ProductDetailScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(product.title),
+        // title: Text(product.title),
         actions: [
           IconButton(
             onPressed: () {
@@ -71,7 +72,7 @@ class ProductDetailScreen extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Product title',
+                        '${product.title}',
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
                               color: Theme.of(context).colorScheme.primary,
                               fontWeight: FontWeight.w500,
@@ -103,7 +104,11 @@ class ProductDetailScreen extends ConsumerWidget {
                       ),
                       ElevatedButton(
                         child: Text('233 отзывов'),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ReviewScreen(),
+                          ));
+                        },
                       )
                     ],
                   ),
