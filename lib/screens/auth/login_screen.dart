@@ -10,6 +10,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool _obscurePassword = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,14 +42,37 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: Theme.of(context).colorScheme.onBackground),
               )),
             ),
+            // TextFormField(
+            //   decoration: InputDecoration(
+            //       label: Text(
+            //     'Password',
+            //     style: Theme.of(context).textTheme.titleSmall!.copyWith(
+            //         color: Theme.of(context).colorScheme.onBackground),
+            //   )),
+            // ),
             TextFormField(
+              obscureText: _obscurePassword,
               decoration: InputDecoration(
-                  label: Text(
-                'Password',
-                style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground),
-              )),
+                label: Text(
+                  'Password',
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        color: Theme.of(context).colorScheme.onBackground,
+                      ),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _obscurePassword = !_obscurePassword;
+                    });
+                  },
+                ),
+              ),
             ),
+
+            
             const SizedBox(
               height: 16,
             ),
