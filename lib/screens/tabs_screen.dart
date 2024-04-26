@@ -43,7 +43,6 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
     var activePageTitle = 'Grocery Marketplace';
 
     Widget activePage = MainScreen(
-      
       cardProducts: availableMeals,
     );
 
@@ -78,7 +77,8 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
           BottomNavigationBarItem(
               icon: Icon(Icons.category), label: 'Category'),
           // BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favorites'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart), label: 'Cart'),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle_rounded), label: 'Profile'),
         ],

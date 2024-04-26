@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:grocery_marketplace/models/card_product.dart';
 import 'package:grocery_marketplace/providers/favorites_provider.dart';
-import 'package:grocery_marketplace/screens/comments_screen.dart';
+import 'package:grocery_marketplace/screens/review_screen/review_screen.dart';
 import 'package:grocery_marketplace/widgets/image_slider.dart';
 import 'package:transparent_image/transparent_image.dart';
 
